@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './practica02.component.css'
 })
 export class Practica02Component {
-
+  city = 'Huauchinango ';
 }
