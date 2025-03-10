@@ -10,7 +10,7 @@ import { ContentComponent } from "../content/content.component";
   templateUrl: './content-global.component.html',
   styleUrl: './content-global.component.css'
 })
-export class ContentGlobalComponent {
+export   class ContentGlobalComponent {
   isSidebarOpen = true;
 
   toggleSidebar() {
