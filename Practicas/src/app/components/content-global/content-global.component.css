@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Oculta completamente el Sidebar cuando está cerrado */
+  .sidebar {
+    transition: width 0.3s;
+  }
+  
+  /* Permite que el contenido ocupe todo el ancho cuando el sidebar está cerrado */
+  .content-breadcrumb, .content {
+    transition: margin-left 0.3s;
+  }
+  

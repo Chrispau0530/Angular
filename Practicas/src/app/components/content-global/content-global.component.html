@@ -1,2 +1,27 @@
-<app-header></app-header>
-<app-siderbar></app-siderbar>
+<div class="h-screen flex flex-col">
+    <!-- Navbar -->
+    <div class="NAVBAR z-10">
+      <app-header></app-header>
+    </div>
+  
+    <div class="flex flex-1 overflow-hidden">
+      <!-- Sidebar -->
+      <div class="sidebar relative z-20 bg-white dark:bg-gray-800 transition-all duration-300"
+           [ngClass]="{'w-64': isSidebarOpen, 'w-0': !isSidebarOpen}">
+        <app-siderbar></app-siderbar>
+      </div>
+  
+      <!-- Main Content Area (Breadcrumb + Content) -->
+      <div class="flex-1 overflow-y-auto bg-gray-100 p-4">
+        <div class="content-breadcrumb mb-4">
+          <app-content></app-content>  
+        </div>
+        
+        <!-- Main Content -->
+        <div class="content bg-white p-6 rounded-lg shadow-md">
+          <!-- Aquí puedes renderizar tus componentes o contenido principal -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
