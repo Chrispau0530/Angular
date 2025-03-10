@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Output,EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-practica09',
@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './practica09.component.css'
 })
 export class Practica09Component {
+  @Output() addItemEvent = new EventEmitter<string>();
 
+  addItem() {
+    this.addItemEvent.emit('🐢');
+  }
 }

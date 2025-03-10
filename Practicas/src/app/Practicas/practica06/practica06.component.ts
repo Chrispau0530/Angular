@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './practica06.component.css'
 })
 export class Practica06Component {
-
+  isEditable = true;
 }

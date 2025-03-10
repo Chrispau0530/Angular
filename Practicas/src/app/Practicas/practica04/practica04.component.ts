@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './practica04.component.css'
 })
 export class Practica04Component {
+  isServerRunning = true;
 
 }

@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './practica07.component.css'
 })
 export class Practica07Component {
+  message = '';
+
+  onMouseOver() {
+    this.message = 'Way to go 🚀';
+  } 
 
 }
