@@ -9,6 +9,7 @@ import { Practica07Component } from './Practicas/practica07/practica07.component
 import { Practica08Component } from './Practicas/practica08/practica08.component';
 import { Practica09Component } from './Practicas/practica09/practica09.component';
 import { Practica10Component } from './Practicas/practica10/practica10.component';
+import { Practica11Component } from './Practicas/practica11/practica11.component';
 
 export const routes: Routes = [
   {
@@ -62,7 +63,7 @@ export const routes: Routes = [
       },
       {
         path: 'practica11',
-        loadComponent: () => import('./Practicas/practica02/practica02.component').then(m =>Practica02Component),
+        loadComponent: () => import('./Practicas/practica11/practica11.component').then(m =>Practica11Component),
       },
       {
         path: 'practica12',
