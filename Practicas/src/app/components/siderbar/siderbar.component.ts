@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './siderbar.component.css'
 })
 export class SiderbarComponent {
+  isSidebarVisible: boolean = true;
 
+  toggleSidebar(): void {
+    this.isSidebarVisible = !this.isSidebarVisible;
+  }
 }
