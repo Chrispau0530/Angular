@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
 import { SiderbarComponent } from '../siderbar/siderbar.component';
-import { ContentComponent } from '../content/content.component';
+
 import { BreadcrumbComponent } from '../breadcrumb/breadcrumb.component';
 import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-content-global',
   standalone: true,
-  imports: [CommonModule, SiderbarComponent, RouterOutlet, HeaderComponent, ContentComponent, BreadcrumbComponent,FooterComponent],
+  imports: [CommonModule, SiderbarComponent, RouterOutlet, HeaderComponent, BreadcrumbComponent,FooterComponent],
   templateUrl: './content-global.component.html',
   styleUrl: './content-global.component.css'
 })
