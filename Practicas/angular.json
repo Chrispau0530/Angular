@@ -31,10 +31,14 @@
               "node_modules/datatables.net-dt/css/dataTables.dataTables.min.css",
               "@angular/material/prebuilt-themes/magenta-violet.css",
               "src/styles.css"
+              
+
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/datatables.net/js/dataTables.min.js"
+              "node_modules/datatables.net/js/dataTables.min.js",
+                "node_modules/jquery/dist/jquery.js"
+
             ],
             "server": "src/main.server.ts",
             "outputMode": "server",

@@ -4,11 +4,12 @@ import { PrimeraComponent } from './datatables/primera/primera.component';
 import { ContentGlobalComponent } from './components/content-global/content-global.component';
 import { CommonModule } from '@angular/common';
 import { DataTablesModule } from 'angular-datatables';
+import { HttpClientModule } from '@angular/common/http'; 
 
 @Component({
   selector: 'app-root',
   standalone:true,
-  imports: [RouterOutlet,ContentGlobalComponent,CommonModule,PrimeraComponent],
+  imports: [RouterOutlet,ContentGlobalComponent,CommonModule,PrimeraComponent,HttpClientModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

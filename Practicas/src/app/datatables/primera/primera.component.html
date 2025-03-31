@@ -383,3 +383,35 @@
       </tr>
     </tbody>
   </table>
+
+  <h2>Sesiones</h2>
+
+  <div *ngIf="sessions.length === 0">Cargando datos...</div>
+  
+  <table *ngIf="sessions.length > 0" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Session ID</th>
+        <th>Email</th>
+        <th>Nickname</th>
+        <th>Mac Address</th>
+        <th>IP</th>
+        <th>Fecha de Creación</th>
+        <th>Último Acceso</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let session of sessions">
+        <td>{{ session.sessionId }}</td>
+        <td>{{ session.email }}</td>
+        <td>{{ session.nickname }}</td>  
+        <td>{{ session.macAddress }}</td>
+        <td>{{ session.ip }}</td>
+        <td>{{ session.createAD_CDMX | date:'medium' }}</td>
+        <td>{{ session.lastAccess | date:'medium' }}</td>
+        <td>{{ session.status }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
