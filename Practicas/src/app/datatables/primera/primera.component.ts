@@ -11,7 +11,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http'
 @Component({
   selector: 'app-primera',
   standalone: true,
-  imports: [CommonModule, DataTablesModule,HttpClientModule],
+  imports: [CommonModule, DataTablesModule, HttpClientModule],
   templateUrl: './primera.component.html',
   styleUrls: ['./primera.component.css']
 })
@@ -19,7 +19,7 @@ export class PrimeraComponent implements OnInit, OnDestroy {
   @ViewChild(DataTableDirective, { static: false })
   dtElement!: DataTableDirective;
   
-  dtOptions: any = {  // Use any type instead of DataTables.Settings
+  dtOptions: any = {
     pagingType: 'full_numbers',
     pageLength: 10,
     responsive: true
@@ -49,10 +49,9 @@ export class PrimeraComponent implements OnInit, OnDestroy {
   loadSessions() {
     this.apiService.getAllSessions().subscribe(
       (data) => {
-        console.log('Datos recibidos:', data); // Añade esto para depurar
-        if (data && data.allSessions) {
-          this.sessions = data.allSessions;
-          // Trigger DataTables to redraw the table
+        console.log('Datos recibidos:', data);
+        if (Array.isArray(data)) {
+          this.sessions = data;
           this.dtTrigger.next(null);
         } else {
           console.error('Formato de respuesta inválido:', data);
@@ -66,8 +65,7 @@ export class PrimeraComponent implements OnInit, OnDestroy {
 
   reloadData() {
     this.apiService.getAllSessions().subscribe(data => {
-      this.sessions = data.allSessions;
-      // Refresh the datatable
+      this.sessions = data;
       if (this.dtElement && this.dtElement.dtInstance) {
         this.dtElement.dtInstance.then((dtInstance: Api) => {
           dtInstance.clear().rows.add(this.sessions).draw();
@@ -77,9 +75,7 @@ export class PrimeraComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    // Unsubscribe to avoid memory leaks
     this.dtTrigger.unsubscribe();
-    // Clear the interval when component is destroyed
     if (this.refreshInterval) {
       clearInterval(this.refreshInterval);
     }
