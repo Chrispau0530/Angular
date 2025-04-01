@@ -19,10 +19,11 @@ export class ContentGlobalComponent implements OnInit {
   isUserLoggedIn = false; // Cambia esto según tu lógica de autenticación
 
   ngOnInit() {
-    const sidebarState = localStorage.getItem('sidebarState');
-    this.isSidebarOpen = sidebarState === 'true';
+    if (typeof window !== 'undefined' && localStorage) {
+      const sidebarState = localStorage.getItem('sidebarState');
+      this.isSidebarOpen = sidebarState === 'true';
+    }
   }
-
   toggleSidebar() {
     this.isSidebarOpen = !this.isSidebarOpen;
     console.log('Sidebar State:', this.isSidebarOpen); // Verifica el estado
