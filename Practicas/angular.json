@@ -28,16 +28,21 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+           "node_modules/datatables.net-bs5/css/dataTables.bootstrap5.min.css",
+           "@angular/material/prebuilt-themes/magenta-violet.css",
+           "node_modules/datatables.net-dt/css/dataTables.dataTables.min.css",       
               "node_modules/datatables.net-dt/css/dataTables.dataTables.min.css",
-              "@angular/material/prebuilt-themes/magenta-violet.css",
-              "src/styles.css"
-              
+             
+
+
 
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/datatables.net/js/dataTables.min.js",
-                "node_modules/jquery/dist/jquery.js"
+             "node_modules/datatables.net/js/dataTables.min.js",
+                "node_modules/jquery/dist/jquery.js",
+              "node_modules/datatables.net-bs5/js/dataTables.bootstrap5.min.js"
 
             ],
             "server": "src/main.server.ts",
@@ -102,7 +107,10 @@
             "styles": [
               "src/styles.css",
               "node_modules/jquery/dist/jquery.min.js",
-  "node_modules/datatables.net/js/jquery.dataTables.min.js"
+  "node_modules/datatables.net/js/jquery.dataTables.min.js",
+  "node_modules/datatables.net-dt/css/dataTables.dataTables.min.css",
+    "node_modules/datatables.net-dt/css/jquery.dataTables.css"
+
             ],
             "scripts": [
                 "node_modules/datatables.net-dt/css/jquery.dataTables.min.css"
