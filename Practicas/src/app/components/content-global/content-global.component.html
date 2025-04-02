@@ -1,41 +1,74 @@
-<div class="h-screen flex flex-col">
-  <!-- Navbar -->
-  <div class="NAVBAR z-10 flex items-center bg-white shadow-md p-4">
-      <button 
-          (click)="toggleSidebar()" 
-          class="mr-4 p-2 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition-all">
-          ☰
-      </button>
-      <app-header></app-header>
-  </div>
+<div class="layout-container">
+  <!-- Header/Navbar -->
+  <header class="navbar">
+    <div class="navbar-content">
+      <a href="#" class="navbar-title">PracticasUnidad</a>
 
-  <div class="flex flex-1 overflow-hidden">
-      <!-- Sidebar -->
-      <div class="sidebar bg-white dark:bg-gray-800"
-           [ngClass]="{'collapsed': !isSidebarOpen}">
-          <app-siderbar></app-siderbar>
-      </div>
-
-      <!-- Main Content Area (Breadcrumb + Content) -->
-      <div 
-          class="flex-1 overflow-y-auto bg-gray-100 p-4 transition-all duration-300"
-          [ngClass]="{'ml-0': !isSidebarOpen, 'ml-64': isSidebarOpen}">
-          
-          <div class="content-breadcrumb mb-4">
-              <app-breadcrumb></app-breadcrumb>
+      <!-- Navbar Menus -->
+      <div class="navbar-menus">
+        <!-- Botón Practicas -->
+        <div class="dropdown">
+          <button (click)="toggleDropdown($event)" class="dropdown-button">Practicas</button>
+          <div *ngIf="isDropdownOpen" class="dropdown-menu">
+            <a href="#" class="dropdown-item">Practica 01</a>
+            <a href="#" class="dropdown-item">Practica 02</a>
           </div>
+        </div>
 
-          <!-- Main Content -->
-          <div class="content bg-white p-6 rounded-lg shadow-md">
-              <router-outlet></router-outlet>
+        <!-- Botón Gráficas -->
+        <div class="dropdown">
+          <button (click)="toggleSecondDropdown($event)" class="dropdown-button">Gráficas</button>
+          <div *ngIf="isSecondDropdownOpen" class="dropdown-menu">
+            <a href="#" class="dropdown-item">Gráfica 1</a>
+            <a href="#" class="dropdown-item">Gráfica 2</a>
           </div>
+        </div>
+
+        <!-- Botón Tablas -->
+        <div class="dropdown">
+          <button (click)="toggleThirdDropdown($event)" class="dropdown-button">Tablas</button>
+          <div *ngIf="isThirdDropdownOpen" class="dropdown-menu">
+            <a href="#" class="dropdown-item">Tabla 1</a>
+            <a href="#" class="dropdown-item">Tabla 2</a>
+          </div>
+        </div>
       </div>
+    </div>
+  </header>
+
+  <!-- Main Layout -->
+  <div class="main-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Practica 01</a></li>
+        <li><a href="#">Practica 02</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb">
+        <ol>
+          <li><a href="#">Inicio</a></li>
+          <li>/</li>
+          <li><a href="#">Practicas</a></li>
+          <li>/</li>
+          <li>Detalle</li>
+        </ol>
+      </nav>
+
+      <!-- Content -->
+      <div class="content">
+        <p>Contenido dinámico aquí...</p>
+      </div>
+    </main>
   </div>
 
   <!-- Footer -->
-  <div class="FOOTER bg-white shadow-md p-4 text-center"
-       *ngIf="!isUserLoggedIn">
-      <app-footer></app-footer>
-  </div>
+  <footer class="footer">
+    <p>© 2025. Todos los derechos reservados.</p>
+  </footer>
 </div>
-

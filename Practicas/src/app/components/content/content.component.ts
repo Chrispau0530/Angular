@@ -9,7 +9,7 @@ import { Practica02Component } from '../../Practicas/practica02/practica02.compo
 @Component({
   selector: 'app-content',
   standalone:true,
-  imports: [RouterOutlet,BreadcrumbComponent,Practica02Component,Practica01Component],
+  imports: [],
   templateUrl: './content.component.html',
   styleUrl: './content.component.css'
 })

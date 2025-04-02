@@ -13,8 +13,8 @@ import { Practica11Component } from './Practicas/practica11/practica11.component
 
 export const routes: Routes = [
   {
-    path: "",
-    //loadComponent:()=> import ('./components/login/login.component').then(m => m.LoginComponent),
+   path: "",
+  //  loadComponent:()=> import ('./components/login/login.component').then(m => m.LoginComponent),
     
     children: [
       {

@@ -1,33 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from '../header/header.component';
-import { SiderbarComponent } from '../siderbar/siderbar.component';
-
-import { BreadcrumbComponent } from '../breadcrumb/breadcrumb.component';
-import { FooterComponent } from '../footer/footer.component';
+import { RouterOutlet, Router } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-content-global',
   standalone: true,
-  imports: [CommonModule, SiderbarComponent, RouterOutlet, HeaderComponent, BreadcrumbComponent,FooterComponent],
+  imports: [CommonModule, RouterLink, RouterOutlet],
   templateUrl: './content-global.component.html',
-  styleUrl: './content-global.component.css'
+  styleUrls: ['./content-global.component.css']
 })
-export class ContentGlobalComponent implements OnInit {
-  isSidebarOpen = true;  // Valor por defecto
-  isUserLoggedIn = false; // Cambia esto según tu lógica de autenticación
+export class ContentGlobalComponent {
+  isDropdownOpen: boolean = false; // Estado del menú desplegable "Practicas"
+  isSecondDropdownOpen: boolean = false; // Estado del menú desplegable "Gráficas"
+  isThirdDropdownOpen: boolean = false; // Estado del menú desplegable "Tablas"
 
-  ngOnInit() {
-    if (typeof window !== 'undefined' && localStorage) {
-      const sidebarState = localStorage.getItem('sidebarState');
-      this.isSidebarOpen = sidebarState === 'true';
-    }
+  toggleDropdown(event: Event): void {
+    event.stopPropagation(); // Evitar que el evento se propague
+    this.closeAllDropdowns(); // Cerrar otros menús desplegables
+    this.isDropdownOpen = !this.isDropdownOpen; // Alternar el estado del menú "Practicas"
   }
-  toggleSidebar() {
-    this.isSidebarOpen = !this.isSidebarOpen;
-    console.log('Sidebar State:', this.isSidebarOpen); // Verifica el estado
-    localStorage.setItem('sidebarState', String(this.isSidebarOpen));
+
+  toggleSecondDropdown(event: Event): void {
+    event.stopPropagation(); // Evitar que el evento se propague
+    this.closeAllDropdowns(); // Cerrar otros menús desplegables
+    this.isSecondDropdownOpen = !this.isSecondDropdownOpen; // Alternar el estado del menú "Gráficas"
   }
-  
+
+  toggleThirdDropdown(event: Event): void {
+    event.stopPropagation(); // Evitar que el evento se propague
+    this.closeAllDropdowns(); // Cerrar otros menús desplegables
+    this.isThirdDropdownOpen = !this.isThirdDropdownOpen; // Alternar el estado del menú "Tablas"
+  }
+
+  closeAllDropdowns(): void {
+    // Cerrar todos los menús desplegables
+    this.isDropdownOpen = false;
+    this.isSecondDropdownOpen = false;
+    this.isThirdDropdownOpen = false;
+  }
 }
