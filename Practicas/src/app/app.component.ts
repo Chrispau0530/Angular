@@ -1,22 +1,46 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { ContentGlobalComponent } from './components/content-global/content-global.component';
-import { CommonModule } from '@angular/common';
-import { DataTablesModule } from 'angular-datatables';
+import { Router } from '@angular/router';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { PageContainerComponent } from './components/page-container/page-container.component';
+import { NgIf } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterLink } from '@angular/router';
-
-
-
-
 
 @Component({
   selector: 'app-root',
-  standalone:true,
-  imports: [RouterOutlet, ContentGlobalComponent, CommonModule,  HttpClientModule, DataTablesModule,],
+  standalone: true,
+  imports: [
+    NavbarComponent,
+    SidebarComponent,
+    PageContainerComponent,
+    NgIf,
+    HttpClientModule  
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Practicas';
+  title = 'ManualEjercicios_Anglar_230410';
+
+  isSidebarCollapsed = false;
+  currentExercise: string = '';
+  isLoggedIn: boolean = false; // Establecer a false inicialmente
+
+  constructor(private router: Router) {}
+
+  toggleSidebar() {
+    this.isSidebarCollapsed = !this.isSidebarCollapsed;
+  }
+
+  onExerciseSelected(exerciseName: string) {
+    this.currentExercise = exerciseName;
+  }
+
+  logout() {
+    this.isLoggedIn = false; // Cambiar a false al hacer logout
+  }
+
+  login() {
+    this.isLoggedIn = true; // Cambiar a true al hacer login
+  }
 }

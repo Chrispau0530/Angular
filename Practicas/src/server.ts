@@ -7,7 +7,6 @@ import {
 import express from 'express';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { provideHttpClient } from '@angular/common/http';
 
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
@@ -30,9 +29,6 @@ const angularApp = new AngularNodeAppEngine();
 /**
  * Serve static files from /browser
  */
-const providers = [
-  provideHttpClient(),]
-  
 app.use(
   express.static(browserDistFolder, {
     maxAge: '1y',
@@ -65,6 +61,6 @@ if (isMainModule(import.meta.url)) {
 }
 
 /**
- * Request handler used by the Angular CLI (for dev-server and during build) or Firebase Cloud Functions.
+ * The request handler used by the Angular CLI (dev-server and during build).
  */
 export const reqHandler = createNodeRequestHandler(app);

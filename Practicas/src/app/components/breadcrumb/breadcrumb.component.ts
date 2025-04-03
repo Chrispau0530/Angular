@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-breadcrumb',
-  imports: [],
+  standalone: true,
   templateUrl: './breadcrumb.component.html',
-  styleUrl: './breadcrumb.component.css'
+  styleUrls: ['./breadcrumb.component.css'],
+  imports: [CommonModule] 
 })
 export class BreadcrumbComponent {
-
+  @Input() exerciseName: string = '';
 }

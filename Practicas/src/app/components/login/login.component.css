@@ -1,0 +1,143 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f3f4f6; /* Fondo principal */
+  padding: 20px;
+}
+
+.login-form {
+  background-color: #ffffff; /* Fondo del formulario */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  text-align: center;
+  color: #1f2937; /* Texto principal */
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  color: #1f2937; /* Texto principal */
+  margin-bottom: 8px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db; /* Borde gris claro */
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #f9fafb; /* Fondo del input */
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #4f46e5; /* Borde azul intenso */
+  outline: none;
+  background-color: #ffffff; /* Fondo blanco */
+}
+
+button {
+  background-color: #4f46e5; /* Botón azul intenso */
+  color: #ffffff; /* Texto blanco */
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #6366f1; /* Hover azul más claro */
+  transform: translateY(-2px); /* Efecto de elevación */
+}
+
+button:disabled {
+  background-color: #d1d5db; /* Botón deshabilitado */
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #ef4444; /* Rojo para errores */
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.login-footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6b7280; /* Texto secundario */
+}
+
+.login-footer a {
+  color: #4f46e5; /* Enlaces azul intenso */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.login-footer a:hover {
+  color: #6366f1; /* Hover azul más claro */
+}
+
+/* Footer actualizado con la nueva paleta */
+.footer {
+  background-color: #1A090D; /* Fondo oscuro */
+  color: #adeada; /* Texto en color principal */
+  padding: 15px 20px;
+  position: fixed;
+  bottom: 0;
+  left: 285px; /* Se posiciona a la derecha del sidebar */
+  width: 100%; /* Ocupa el ancho restante */
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  font-size: 0.9em;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-logo .brand {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #adeada; /* Color principal */
+  text-decoration: none;
+}
+
+.footer-links a {
+  color: #cdeadc; /* Color secundario para enlaces */
+  text-decoration: none;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #adeada; /* Color principal al pasar el cursor */
+}
+
+.footer-info p {
+  margin: 0;
+}

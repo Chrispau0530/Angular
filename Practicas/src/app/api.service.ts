@@ -6,13 +6,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl = 'http://localhost:3000'; // Your API base URL from the code you shared
+  private apiUrl = 'https://localhost:3000/allSessions'; // Cambia esta URL por la de tu API
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  // Get all sessions
   getAllSessions(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/allSessions`);
+    console.log('Realizando solicitud GET a:', this.apiUrl);
+    return this.http.get<any>(this.apiUrl);
   }
 
   // Get active sessions
