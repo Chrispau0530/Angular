@@ -1,0 +1,24 @@
+/* app.component.css */
+.container {
+  display: flex;
+  height: 95vh; /* 95% del alto de la pantalla, el navbar ocupará el 5% superior */
+  transition: all 0.3s ease;
+}
+
+.container app-sidebar {
+  flex: 0 0 15%;
+  transition: all 0.3s ease;
+}
+
+.container app-page-container {
+  flex: 0 0 85%;
+  transition: all 0.3s ease;
+}
+
+.sidebar-collapsed app-sidebar {
+  display: none;
+}
+
+.sidebar-collapsed app-page-container {
+  flex: 0 0 100%;
+}

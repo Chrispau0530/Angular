@@ -1,0 +1,76 @@
+/* Contenedor principal para el contenido */
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Hace que ocupe el 100% de la altura de la pantalla */
+    width: 100%;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec); /* Fondo suave */
+    padding: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra interna */
+}
+
+/* Vista de Login: ocupa toda la pantalla cuando el usuario no está logueado */
+.login-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #bdeadb, #adeada); /* Fondo degradado */
+    height: 100vh; /* El login ocupa toda la pantalla */
+    position: fixed; /* Asegura que el contenido no se desborde */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 30;
+}
+
+/* Botón Login */
+.login-container button {
+    background-color: #adeada; /* Botón */
+    color: #1A090D;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+    background-color: #cdeadc; /* Hover */
+}
+
+/* Contenedor para el contenido de ejercicios, solo visible cuando el usuario está logueado */
+.exercise-container {
+    flex: 1;
+    padding: 15px;
+    background: linear-gradient(135deg, #ffffff, #f7fafc); /* Fondo claro */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Elimina el scroll */
+}
+
+/* Cada bloque de ejercicio */
+.exercise-content {
+    margin-bottom: 15px;
+    background-color: #e3f6f5; /* Fondo de acento */
+    padding: 15px;
+    border-radius: 6px;
+    color: #102a43; /* Texto oscuro */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.exercise-content:hover {
+    transform: translateY(-5px); /* Efecto de elevación */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Mensaje cuando no hay ejercicio seleccionado */
+.no-exercise p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #334e68;
+    font-weight: bold;
+}

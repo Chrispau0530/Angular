@@ -1,0 +1,81 @@
+.footer {
+    background: linear-gradient(135deg, #4f46e5, #6b5edc); /* Fondo degradado */
+    color: #ffffff;
+    padding: 15px 20px;
+    width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo .brand {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffffff; /* Texto blanco */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-logo .brand:hover {
+    color: #d1d5db; /* Hover gris claro */
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    font-size: 0.9rem;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #d1d5db;
+}
+
+.footer-info {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #d1d5db; /* Texto gris claro */
+}
+
+.footer-info p {
+    margin: 0;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.footer-social a {
+    color: #ffffff; /* Iconos blancos */
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-social a:hover {
+    color: #d1d5db; /* Hover gris claro */
+    transform: scale(1.1); /* Efecto de zoom */
+}

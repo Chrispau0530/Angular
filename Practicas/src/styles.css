@@ -1,0 +1,11 @@
+/* styles.css */
+/* Reset global de márgenes y paddings, y establece dimensiones completas */
+html, body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+  }
+  
